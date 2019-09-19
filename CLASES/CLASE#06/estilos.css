@@ -1,0 +1,52 @@
+.sideBar{
+    float: right;
+    height: 200px;;
+    width: 30%;
+    clear: both;
+    /*border: 2px solid #c42626;*/
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 0%;
+    text-align: justify;
+    font-size: 10px;
+}
+.sideBar h1{
+    margin: 3%;
+}
+.contenido{
+    float: right;
+    width: 70%;
+    border: 2px solid #420cd6;
+    box-sizing: border-box;
+    padding: 30px;
+    text-align: justify;
+    margin: 0%;
+}
+.footer{
+    width: 100%;
+    height: 20%;
+    clear: both;
+    box-sizing: border-box;
+    padding: 3px;
+    border: 2px solid #ffee00;
+    text-align:center;
+    margin: 0%;
+    background: #ffee00;
+}
+.img{
+    float: right;
+    width: 100%;
+    height: 120%;
+    box-sizing: border-box;
+    margin: 0%;
+    overflow:hidden;
+}
+li{
+    list-style: none;
+    font-size: 20px;
+    padding: 3px;
+    margin-top:2%;
+}
+#lista_paises{
+    margin-bottom: 40%; 
+}
