@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=Red+Hat+Display&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+body {
+    background: #ffffff;
+}
+
+p {
+    display: none;
+    padding: 20px;
+}
+.contenedor {
+    margin: auto;
+    width: 90%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    background: #ffef57;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    flex-wrap: wrap;
+}
+/*HEADER*/
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between; 
+    
+}
+
+.header h1 {
+    color: #323330;
+    padding-top: 25px;
+    margin-left: auto;  
+    font-size: 40px;
+    letter-spacing: 5px;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+.header img {
+    width: 100px;
+    border: 1px solid;
+}
+
+/*ELEMENTOS DE LISTA*/
+.list_ejercicios ul {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+    list-style: none;
+    background: orange;
+
+}
+.list_ejercicios li {
+    padding-bottom: 6px;
+    padding: 10px;
+    border-bottom: 1px solid rgb(131, 131, 131);   
+}
+
+.list_ejercicios li:hover {
+    background: #ffffff;
+    transition: all .3s ease;
+    box-shadow: 1px 1px 20px 1px;
+}
+/**/
+ul .ejercicio1:hover p {
+    display: block;
+    /*padding: 10px;    */
+}
+
+ul .ejercicio2:hover p {
+    display: block;
+    /*padding: 10px;    */
+}
+
+ul .ejercicio3:hover p {
+    display: block;
+    /*padding: 10px;    */
+}
+
+
+.destacar {
+    font-weight: bold;
+    color: rgb(79, 99, 163);
+}
+
+.resaltar_js {
+    color: #323330;
+}
+
+button {
+    position: relative;
+    left: 20px;
+}
+
+
