@@ -1,0 +1,56 @@
+
+
+
+
+
+
+
+
+body{
+    background-color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        
+}
+h1,h2{
+    color: brown;
+}
+li{
+    color: red;
+    list-style: none;
+}
+p{
+    text-align: justify;
+    color: black;
+}
+img{
+    width: 320px;
+    height: 200px;
+    border-style: dashed;
+}   
+img{
+    position: relative;
+    top: 0px;
+}
+
+.contenedor{
+    margin: 0 auto;
+    width: 1000px;
+}
+ol{
+    color: red;
+    list-style: initial;
+}
+#imgAleatoria{
+    width: 60%;
+    margin-right: 10px;
+    float: right;
+    border: none;
+}
+#parrafo{
+    border: 3px solid blue;
+    padding: 10px;
+    width: 35%;
+    height: 60%;
+    margin-left: 5px;
+    float: left;
+}
