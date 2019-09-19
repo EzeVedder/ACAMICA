@@ -4,6 +4,7 @@
 var Banco = {
     usuarios: [],
 
+     // método para crear usuario pasando por parametro el nombre y un saldo inicial.
     crearUsuario: function(p_nombre,p_saldo) {
         var usuario = {
             nombre: p_nombre,
@@ -18,6 +19,19 @@ var Banco = {
         for(var i=0; i<this.usuarios.length; i++) {
             var usu = this.usuarios[i];
             if(usu.nombre === p_usuario) {
+                return usu.saldo;
+            }else{
+                console.log('Usuario no encontrado.');
+            }
+        }
+    },
+
+    extraerSaldo: function(p_usuario,p_saldo) {
+        debugger
+        for(var i=0; i<this.usuarios.length; i++) {
+            var usu = this.usuarios[i];
+            if(usu.nombre === p_usuario) {
+                usu.saldo -= p_saldo;
                 return usu.saldo;
             }else{
                 console.log('Usuario no encontrado.');
