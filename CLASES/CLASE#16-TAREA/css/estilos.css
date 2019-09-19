@@ -1,0 +1,60 @@
+
+.first-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.container{
+    width: 20%;
+    height: 20%;
+    padding: 9px;
+    margin-top: 10px; 
+    border: 2px solid black;
+    background: rgb(248, 206, 21);
+    color: rgb(36, 36, 36);
+    text-align: center;
+    letter-spacing: 2px;
+    font-family: 'Luckiest Guy', cursive, 'Arial';
+    cursor: pointer;    
+}
+
+#contenedor-imagenes{
+    display: flex;
+    /* border: 1px solid black; */
+    justify-content: space-around;
+    width: 50%;
+    /* height: 100%; */ 
+}
+
+#contenedor-imagenes div{
+    width: 100%;
+    height: 100%;
+}
+
+
+.green{
+    background: rgb(125, 241, 16);
+    width: 80%;
+}
+
+#array-de-nombres,#matriz-de-nombres{
+    list-style: none;
+}
+
+
+
+@media(max-width: 900px){
+    .texto{
+        font-size: 20px;
+    }
+}
+
+@media(min-width: 900px){
+    .texto{
+        font-size: 30px;
+    }
+}
+
