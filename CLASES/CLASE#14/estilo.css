@@ -1,0 +1,23 @@
+.fil {
+    float: left;
+    width: 100px;
+    height: 100px;
+    border: 1px solid grey;
+    text-align: center;
+}
+
+.col { 
+    clear: both; 
+    width: 100px;
+    height: 100px;
+    border: 1px solid grey;
+    text-align: center; 
+}
+
+.fil.elemento1 {
+    background: yellow;
+}
+
+.col.elemento4 {
+    background: red;
+}
