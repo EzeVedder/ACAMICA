@@ -53,14 +53,14 @@ var Banco = {
 
 // funcion para crear objeto persona
 
-function crearPersona(p_nombre,p_saldo) {
-    var persona = {
-        nombre: p_nombre,
-        billetera: p_saldo,
-        enriquecer: function(monto) {
-            this.billetera = this.billetera+monto;
-            return this.billetera;
-        }
-    }
-    return persona;
-}
+// function crearPersona(p_nombre,p_saldo) {
+//     var persona = {
+//         nombre: p_nombre,
+//         billetera: p_saldo,
+//         enriquecer: function(monto) {
+//             this.billetera = this.billetera+monto;
+//             return this.billetera;
+//         }
+//     }
+//     return persona;
+// }
