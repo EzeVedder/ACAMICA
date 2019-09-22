@@ -1,3 +1,6 @@
+
+$(document).ready(function(){
+  console.log("JQuery cargado...");
 var nombreColores = ['White', 'LightYellow',
   'LemonChiffon', 'LightGoldenrodYellow', 'PapayaWhip', 'Moccasin', 'PeachPuff', 'PaleGoldenrod', 'Bisque', 'NavajoWhite', 'Wheat', 'BurlyWood', 'Tan',
   'Khaki', 'Yellow', 'Gold', 'Orange', 'DarkOrange', 'OrangeRed', 'Tomato', 'Coral', 'DarkSalmon', 'LightSalmon', 'LightCoral', 'Salmon', 'PaleVioletRed',
@@ -20,6 +23,8 @@ var nombreColores = ['White', 'LightYellow',
   'DimGray', 'LightSlateGray', 'DarkSlateGray', 'Black'
 ];
 
+var paletaDeColores = [];
+
 // Variable para guardar el elemento 'color-personalizado'
 // Es decir, el que se elige con la rueda de color.
 var colorPersonalizado = document.getElementById('color-personalizado');
@@ -33,3 +38,35 @@ colorPersonalizado.addEventListener('change',
 
   })
 );
+
+
+
+
+
+/**
+ * FUNCION PARA GENERAR LA PALETA DE COLORES DE MANERA DINÁMICA
+ */
+
+ function cargarPaletaDeColores(p_arrayColores) {
+   
+    var $paletaColores = $("#paleta");
+    debugger
+    for(var i=0; i<p_arrayColores.length; i++){
+      var colorActual = p_arrayColores[i];
+      $paletaColores.append("<div></div>");
+      var $div_actual = $paletaColores.children().eq(i);
+      $div_actual.attr("id",colorActual);
+      $div_actual.attr("class","color-paleta");
+      $div_actual.css({"background-color":colorActual});
+      //$paletaColores.children("div").css({"background-color":colorActual});
+
+
+    }
+
+ }
+
+ cargarPaletaDeColores(nombreColores);
+
+
+
+});

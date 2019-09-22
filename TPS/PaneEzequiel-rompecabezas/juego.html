@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>BMO Arcade</title>
+  <link rel="stylesheet" href="css/juego.css">
+  <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&amp;display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Columna de instrucciones y objetivo -->
+  <div class="col-40">
+    <div id="titulo">
+      <h3>Rompecabezas</h3>
+    </div>
+    <div id="instrucciones">
+      <ul id="lista-instrucciones">
+      </ul>
+    </div>
+    <div id="objetivo">
+      <h3>Objetivo</h3>
+      <img src="images/final.png" />
+      <div class="texto-centrado">
+      </div>
+    </div>
+    <div id="ultimo-mov">
+      <h3>Último movimiento</h3>
+      <div id="flecha" class="texto-centrado">
+      </div>
+    </div>
+  </div>
+  <!-- Fin columna instrucciones y objetivo -->
+  <!-- Inicio tablero de juego -->
+  <div class="col-60">
+    <div id="juego">
+      <div class="tablero">
+        <div id="pieza1" class="piezas"><img src="images/10.jpg" /></div>
+        <div id="pieza2" class="piezas"><img src="images/20.jpg" /></div>
+        <div id="pieza3" class="piezas"><img src="images/30.jpg" /></div>
+        <div id="pieza4" class="piezas"><img src="images/40.jpg" /></div>
+        <div id="pieza5" class="piezas"><img src="images/50.jpg" /></div>
+        <div id="pieza6" class="piezas"><img src="images/60.jpg" /></div>
+        <div id="pieza7" class="piezas"><img src="images/70.jpg" /></div>
+        <div id="pieza8" class="piezas"><img src="images/80.jpg" /></div>
+        <div id="pieza9" class="piezas"></div>
+      </div>
+    </div>
+  </div>
+  <!-- Fin tablero de juego -->
+  <div id="footer">
+    <h5 class="footer-text">&#169;Copyright Acámica</h5>
+  </div>
+  <!-- Insertar audio movimiento de piezas -->
+  <audio id="audio-pieza">
+    <source src="audio/move_puzzle.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+  <!-- Inicio cartel ganador-->
+  <div id="cartel-ganador">
+    <img src="images/adventure-time-sea-.png" />
+    <!-- <span class="icon-check">&#10003;</span> -->
+    <h1>GANASTE!!!</h1>
+    <a onclick="popUp()" class="closeBtn">Cerrar</a>
+  </div>
+  <!-- Fin cartel ganador -->
+  <!-- Insertar audio ganador -->
+  <audio id="audio-ganador">
+    <source src="audio/cheer2.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script src="js/juego.js"></script>
+</body>
+
+</html>
