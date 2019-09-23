@@ -3,10 +3,10 @@
 
 // Abre una ventana para guardar nuestro arte en un archivo pixel-art.png
 function guardarPixelArt() {
-  html2canvas($("#grilla-pixeles") , {
-    onrendered: function(canvas) {
+  html2canvas($("#grilla-pixeles"), {
+    onrendered: function (canvas) {
       theCanvas = canvas;
-      canvas.toBlob(function(blob) {
+      canvas.toBlob(function (blob) {
         saveAs(blob, "pixel-art.png");
       });
     }
@@ -172,8 +172,8 @@ function nameToHex(name) {
 /////////
 function hex2rgb(c) {
   if (c[0] === '#') c = c.substr(1);
-  var r = parseInt(c.slice(0,2), 16),
-      g = parseInt(c.slice(2,4), 16),
-      b = parseInt(c.slice(4,6), 16);
-  return 'rgb('+ r +','+ g +','+ b +')';
+  var r = parseInt(c.slice(0, 2), 16),
+    g = parseInt(c.slice(2, 4), 16),
+    b = parseInt(c.slice(4, 6), 16);
+  return 'rgb(' + r + ',' + g + ',' + b + ')';
 }

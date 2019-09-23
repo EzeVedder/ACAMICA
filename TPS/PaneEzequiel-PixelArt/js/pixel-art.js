@@ -1,6 +1,6 @@
 
 var paletaDeColores = [];
-var grillaDeColores = 1750;
+var grillaDeColores = 1749;
 var colorElegido;
 var colorRGB;
 var mousePresionado;
@@ -43,6 +43,8 @@ $(document).ready(function () {
       colorActual = colorPersonalizado.value;
       // Completar para que cambie el indicador-de-color al colorActual
       colorRGB = hex2rgb(colorActual);
+      $("#indicador-de-color").css("background-color", colorRGB);
+      agregarMensajeDeColor(colorRGB);
     })
   );
 
@@ -113,8 +115,6 @@ $(document).ready(function () {
     var $elemento_pixel = $("#grilla-pixeles").children().eq(this.id);
     $elemento_pixel.css("background-color", colorRGB);
     //debugger
-
-
   }
 
 
@@ -123,7 +123,7 @@ $(document).ready(function () {
     var $grilla = $("#grilla-pixeles");
 
     $grilla.mousedown(function () {
-      mousePresionado = true; 
+      mousePresionado = true;
       console.log(mousePresionado);
     });
     $grilla.mouseup(function () {
@@ -132,7 +132,7 @@ $(document).ready(function () {
     });
   }
 
-  function pintarContinuado() { 
+  function pintarContinuado() {
     if (mousePresionado) {
       var $elemento_pixel = $("#grilla-pixeles").children().eq(this.id);
       $elemento_pixel.css("background-color", colorRGB);
@@ -141,12 +141,51 @@ $(document).ready(function () {
 
   }
 
+  function borrarGrilla() {
+    //debugger
+    $elemento_pixel = $("#grilla-pixeles").children(this);
+    $elemento_pixel.animate({ "background-color": 'white' }, 700);
+  }
+
+
+  function borrarTodo() {
+    $("#borrar").click(borrarGrilla);
+  }
+
+  $(".imgs li").click(function () {
+    //debugger
+    var $superHeroe = $(this).children().attr("id");
+    switch ($superHeroe) {
+      case 'batman':
+        cargarSuperheroe(batman);
+        break;
+      case 'flash':
+        cargarSuperheroe(flash);
+        break;
+      case 'wonder':
+        cargarSuperheroe(wonder);
+        break;
+      case 'invisible':
+        cargarSuperheroe(invisible);
+        break;
+    }
+  });
+
+  function guardarDibujo() {
+    $("#guardar").click(function () {
+      guardarPixelArt();
+    });
+  }
 
 
   /** INICIO PROGRAMA */
 
   cargarPaletaDeColores(nombreColores);
   cargarGrillaDeColores(grillaDeColores);
-  ejecu();
+  borrarTodo();
+  guardarDibujo();
+
+  //importarSuperheroe();
+  //cargarSuperheroe();
 
 });

@@ -51,6 +51,7 @@ p {
   text-transform: uppercase;
   font-size: .3em;
   text-align: right;
+  font-family: 'Press Start 2P';
 }
 h1 {
   color: white;
@@ -87,7 +88,7 @@ input[type="color"]::-webkit-color-swatch {
   width: 15px;
   cursor: pointer;
   margin: 0;
-    outline: 1px solid white;
+  outline: 1px solid white;
 }
 
 .custom {
