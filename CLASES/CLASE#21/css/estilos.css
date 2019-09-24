@@ -1,0 +1,24 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#encabezado {
+    width: 100%;
+    text-align: center;
+    border: 1px solid black;
+    background-color: yellow;
+}
+
+#contenedor {
+    display: flex;
+    width: 100%;
+    text-align: center;
+}
+
+.caja1, .caja2 {
+    background: green;
+    border: 1px solid white;
+    width: 100%;
+    font-size: 3em;
+    cursor: pointer;
+}
