@@ -141,7 +141,7 @@ img {
    margin: 10px 0;
    justify-content: space-between;
  }
-#indicador-de-color {
+#indicador-de-color{
   height: 30px;
   width: 30px;
   border: 1px solid white;
@@ -159,6 +159,14 @@ img {
   width: 29px;
   background: url(../img/empty.gif);
 }
+
+#balde-personalizado {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  background: url(../img/paintbucket.png);
+}
+
 #indicador-de-color-mensaje {
   color: white;
 }

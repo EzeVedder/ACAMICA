@@ -8,6 +8,7 @@ var mousePresionado;
 
 $(document).ready(function () {
   console.log("JQuery cargado...");
+
   var nombreColores = ['White', 'LightYellow',
     'LemonChiffon', 'LightGoldenrodYellow', 'PapayaWhip', 'Moccasin', 'PeachPuff', 'PaleGoldenrod', 'Bisque', 'NavajoWhite', 'Wheat', 'BurlyWood', 'Tan',
     'Khaki', 'Yellow', 'Gold', 'Orange', 'DarkOrange', 'OrangeRed', 'Tomato', 'Coral', 'DarkSalmon', 'LightSalmon', 'LightCoral', 'Salmon', 'PaleVioletRed',
@@ -48,6 +49,7 @@ $(document).ready(function () {
     })
   );
 
+  $("#balde-personalizado").click(pintarConBalde);
 
   /**
    * FUNCION PARA GENERAR LA PALETA DE COLORES DE MANERA DINÁMICA
@@ -84,10 +86,10 @@ $(document).ready(function () {
       $grillaDeColores.append("<div></div>");
       var $div_actual = $grillaDeColores.children().eq(i);
       $div_actual.attr("id", i);
-      //$div_actual.click(pintarGrilla);
       $div_actual.click(pintarGrilla);
       $div_actual.click(detectarMouse);
       $div_actual.mouseover(pintarContinuado);
+      //$div_actual.click(pintarConBalde);
     }
   }
 
@@ -107,14 +109,11 @@ $(document).ready(function () {
     $("#indicador-de-color-mensaje").html("<p>PINCEL " + p_colorElegido + "</p>");
   }
 
-  function pintarGrilla(event) {
-
+  function pintarGrilla() {
     detectarMouse();
     //var $elemento_pixel = $("#grilla-pixeles").children(this); SELECCIONO TODA LA GRILLA
-
     var $elemento_pixel = $("#grilla-pixeles").children().eq(this.id);
     $elemento_pixel.css("background-color", colorRGB);
-    //debugger
   }
 
 
@@ -147,6 +146,11 @@ $(document).ready(function () {
     $elemento_pixel.animate({ "background-color": 'white' }, 700);
   }
 
+  function pintarConBalde() {
+    $elemento_pixel = $("#grilla-pixeles").children(this);
+    $elemento_pixel.animate({ "background-color": colorRGB });
+  }
+  
 
   function borrarTodo() {
     $("#borrar").click(borrarGrilla);
