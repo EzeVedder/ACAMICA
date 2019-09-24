@@ -2,8 +2,29 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* ESTILO BOTONES */
+
+button {
+    width: 15%;
+    color: rgb(29, 29, 29);
+    padding: 10px;
+    position: relative;
+    left: 1%;
+    border-radius: 10px 10px;
+    box-shadow: 2px 2px 1px 1px rgb(207, 207, 207);
+    cursor: pointer;
+}
+
+/* ESTILO DIVS */
+
 #encabezado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+    height: 50px;
+    font-size: 2em;
+    color: rgb(63, 63, 63);
     text-align: center;
     background-color: rgb(253, 191, 21);
 }
@@ -20,15 +41,6 @@
     cursor: pointer;
 }
 
-button {
-    width: 15%;
-    color: rgb(29, 29, 29);
-    padding: 10px;
-    position: relative;
-    left: 1%;
-    border-radius: 10px 10px;
-    box-shadow: 2px 2px 1px 1px rgb(207, 207, 207);
-    cursor: pointer;
-}
+
 
 
