@@ -5,20 +5,30 @@
 #encabezado {
     width: 100%;
     text-align: center;
-    border: 1px solid black;
-    background-color: yellow;
+    background-color: rgb(253, 191, 21);
 }
 
-#contenedor {
+#contenedor-semanas {
     display: flex;
+    flex-direction: column;
     width: 100%;
-    text-align: center;
+    height: 350px;
+    background-color: rgb(243, 243, 243);
 }
 
-.caja1, .caja2 {
-    background: green;
-    border: 1px solid white;
-    width: 100%;
-    font-size: 3em;
+.dia-semana {
     cursor: pointer;
 }
+
+button {
+    width: 15%;
+    color: rgb(29, 29, 29);
+    padding: 10px;
+    position: relative;
+    left: 1%;
+    border-radius: 10px 10px;
+    box-shadow: 2px 2px 1px 1px rgb(207, 207, 207);
+    cursor: pointer;
+}
+
+
