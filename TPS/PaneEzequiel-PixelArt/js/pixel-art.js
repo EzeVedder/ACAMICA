@@ -136,9 +136,8 @@ $(document).ready(function () {
       $elemento_pixel.css("background-color", colorRGB);
       console.log("estoy pintando.");
     }
-
   }
-
+  
   /** FUNCIÓN BORRAR GRILLA */
 
   function borrarGrilla() {
