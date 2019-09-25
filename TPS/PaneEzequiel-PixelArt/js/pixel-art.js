@@ -66,14 +66,11 @@ $(document).ready(function () {
       $div_actual.attr("id", colorActual);
       $div_actual.attr("class", "color-paleta");
       $div_actual.css({ "background-color": colorActual });
-      //$paletaColores.children("div").css({"background-color":colorActual});
+      
       paletaDeColores.push($div_actual);
       $div_actual.click(getColor);
-
     }
-
   }
-
 
   /**
    * FUNCION PARA GENERAR LA GRILLA DE COLORES DE MANERA DINÁMICA
@@ -96,7 +93,6 @@ $(document).ready(function () {
   /** FUNCION PARA MODIFICAR EL INDICADOR DE COLOR */
 
   function getColor(event) {
-    //debugger
     colorElegido = this.id;
     var indicadorDeColor = $("#indicador-de-color");
     indicadorDeColor.css("background-color", colorElegido);
@@ -105,31 +101,34 @@ $(document).ready(function () {
     agregarMensajeDeColor(colorRGB);
   }
 
+/** FUNCIÓN QUE MODIFICA EL MSJ EN INDICADOR DE COLOR */
+
   function agregarMensajeDeColor(p_colorElegido) {
     $("#indicador-de-color-mensaje").html("<p>PINCEL " + p_colorElegido + "</p>");
   }
 
+/** FUNCIÓN PINTAR GRILLA */
+
   function pintarGrilla() {
     detectarMouse();
-    //var $elemento_pixel = $("#grilla-pixeles").children(this); SELECCIONO TODA LA GRILLA
     var $elemento_pixel = $("#grilla-pixeles").children().eq(this.id);
     $elemento_pixel.css("background-color", colorRGB);
   }
 
+/** FUNCIÓN PARA DETECTAR ESTADO DEL MOUSE */
 
   function detectarMouse() {
-    //debugger
     var $grilla = $("#grilla-pixeles");
 
     $grilla.mousedown(function () {
       mousePresionado = true;
-      console.log(mousePresionado);
     });
     $grilla.mouseup(function () {
       mousePresionado = false;
-      console.log(mousePresionado);
     });
   }
+
+/** FUNCIÓN PINTADO CONTINUO */
 
   function pintarContinuado() {
     if (mousePresionado) {
@@ -140,40 +139,50 @@ $(document).ready(function () {
 
   }
 
+  /** FUNCIÓN BORRAR GRILLA */
+
   function borrarGrilla() {
     //debugger
     $elemento_pixel = $("#grilla-pixeles").children(this);
     $elemento_pixel.animate({ "background-color": 'white' }, 700);
   }
 
+/** FUNCIÓN PINTAR CON BALDE */
+
   function pintarConBalde() {
     $elemento_pixel = $("#grilla-pixeles").children(this);
     $elemento_pixel.animate({ "background-color": colorRGB });
   }
   
+/** FUNCIÓN BORRADO */
 
   function borrarTodo() {
     $("#borrar").click(borrarGrilla);
   }
+
+/** FUNCIÓN CARGAR SUPERHEROE */
 
   $(".imgs li").click(function () {
     //debugger
     var $superHeroe = $(this).children().attr("id");
     switch ($superHeroe) {
       case 'batman':
-        cargarSuperheroe(batman);
+        $superHeroe = batman;
         break;
       case 'flash':
-        cargarSuperheroe(flash);
+          $superHeroe = flash;
         break;
       case 'wonder':
-        cargarSuperheroe(wonder);
+          $superHeroe = wonder;
         break;
       case 'invisible':
-        cargarSuperheroe(invisible);
+          $superHeroe = invisible;
         break;
     }
+    cargarSuperheroe($superHeroe);
   });
+
+  /** FUNCIÓN GUARDAR DIBUJO */
 
   function guardarDibujo() {
     $("#guardar").click(function () {
@@ -188,8 +197,5 @@ $(document).ready(function () {
   cargarGrillaDeColores(grillaDeColores);
   borrarTodo();
   guardarDibujo();
-
-  //importarSuperheroe();
-  //cargarSuperheroe();
 
 });
