@@ -28,16 +28,17 @@ function cargarDocumento() {
         $dia_actual.text(diasSemana[i]).attr("class", "dia-semana");
         $dia_actual.click(ocultar);
     }
+        
     // Creación de los botones para mostrar y cambiar tamaño
-    $lista_semanas.after("<button>MOSTRAR ELEMENTOS</button>");
-    var $btn_mostrar = $(":button");
+    $lista_semanas.after("<button type='button'>MOSTRAR ELEMENTOS</button>");
+    var $btn_mostrar = $("button");
     $btn_mostrar.attr("id", "btn-mostrar-elementos");
-    $btn_mostrar.after("<button>CAMBIAR FONT SIZE</button>");
+    $btn_mostrar.after("<button type='button'>CAMBIAR FONT SIZE</button>");
     var $btn_cambiarFontSize = $("#btn-mostrar-elementos").next().attr("id", "btn-cambiar-FontSize");
+
     // Evento click en botones
     $btn_cambiarFontSize.click(cambiarFontSize);
     $btn_mostrar.click(mostrar);
-
 
 }
 
@@ -60,7 +61,6 @@ function mostrar() {
     }
 }
 
-
 function cambiarFontSize() {
     var $lista_semanas = $("li.dia-semana");
 
@@ -71,4 +71,5 @@ function cambiarFontSize() {
     }
 
 }
+
 

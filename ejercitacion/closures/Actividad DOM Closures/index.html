@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Closures en acción</title>
+  <script src="jquery-3.2.1.min.js">
+  </script>
+</head>
+
+<body>
+  <p id="p-verde">Un párrafo verde </p>
+
+  <h1 id="h1-rojo">Un encabezado rojo </h1>
+  <h2 id="h2-azul">Un encabezado h2 azul </h2>
+
+
+  <a href="#" id="color-verde">Cambiar p a verde</a>
+  <a href="#" id="color-rojo">Cambiar h1 a rojo</a>
+  <a href="#" id="color-azul">cambiar h2 a azul</a>
+</body>
+
+<script type="text/javascript">
+  // $('#color-verde').click(function() {
+  //   var $elemento = $('#p-verde');
+  //   $elemento.css('color', 'green');
+  // });
+
+  // $('#color-rojo').click(function() {
+  //   var $elemento = $('#h1-rojo');
+  //   $elemento.css('color', 'red');
+  // });
+
+  // $('#color-azul').click(function() {
+  //   var $elemento = $('#h2-azul');
+  //   $elemento.css('color', 'blue');
+  // });
+  $('#color-verde').click(cambiarColor('p-verde', 'green'));
+  $('#p-verde').mouseover(agrandarFont('p-verde','40px'));
+  $('#color-rojo').click(cambiarColor('h1-rojo', 'red'));
+  $('#color-azul').click(cambiarColor('h2-azul', 'blue'));
+
+  function cambiarColor(id, color) {
+      
+    var $idElemento = $('#' + id);
+      return  function (){
+        $idElemento.css('color', color);
+      }
+  }
+
+  function agrandarFont(id,size){
+    var $elemento = $('#'+id);
+
+    return function(){
+      if($elemento.css('font-size')== '40px'){
+        $elemento.css('font-size','16px');
+      }else {
+        $elemento.css('font-size',size);
+      }
+    }
+  }
+
+
+</script>
+
+
+</html>
