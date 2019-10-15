@@ -1,3 +1,12 @@
+body {
+    font-size: 18px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
 #main-container {
     display: flex;
     flex-direction: column;
@@ -5,10 +14,14 @@
 }
 
 #encabezado {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    line-height: 75px;
+    text-align: center;
     width: 100%;
     height: 70px;
     border: 1px solid black;
-    text-align: center;
 }
 
 #principal {
@@ -20,13 +33,16 @@
     float: left;
     width: 50%;
     height: 40px;
+    padding: 20px;
     background-color: rgb(137, 216, 137);
     border: 1px solid black;
+    
 }
 
 #saldo-carrito {
     float: left;
     width: 50%;
+    padding: 20px;
     background-color: rgb(152, 152, 194);
     border: 1px solid black;
 }
