@@ -7,9 +7,12 @@ del ZombieCaminante que eran los mismos. */
 var ZombieConductor = function(sprite, x, y, ancho, alto, velocidad, rangoMov/*, parametro/s extra de ZombieConductor*/) {
   /* Completar constructor a partir de Enemigo */
   //Enemigo.call(/* ... */);
+  Enemigo.call(this,sprite,x,y,ancho,alto,velocidad,rangoMov);
   /* No olvidar agregar la/s propiedad/es unicas de ZombieConductor necesarias */
 }
 
 /* Completar creacion del ZombieConductor */
-
+ZombieConductor.prototype = Object.create(Enemigo.prototype);
+ZombieConductor.prototype.constructor = ZombieConductor;
 /* Completar metodos para el movimiento y el ataque */
+

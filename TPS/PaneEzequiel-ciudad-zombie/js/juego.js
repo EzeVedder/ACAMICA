@@ -34,9 +34,6 @@ var Juego = {
     new Obstaculo('imagenes/valla_vertical.png', 500, 460, 30, 30, 1),
     new Obstaculo('imagenes/valla_vertical.png', 450, 200, 30, 30, 1),
     new Obstaculo('imagenes/valla_vertical.png', 500, 70, 30, 30, 1),
-    new Obstaculo('imagenes/tren_vertical.png',669,110,40,100,1),
-    new Obstaculo('imagenes/tren_vertical.png',639,110,40,100,1),
-    new Obstaculo('imagenes/tren_horizontal.png',839,320,100,40,1),
     new Obstaculo('imagenes/bache.png',780,200,30,30,1),
     new Obstaculo('imagenes/valla_horizontal.png', 760, 450, 30, 30, 1),
     new Obstaculo('imagenes/valla_horizontal.png', 785, 450, 30, 30, 1)
@@ -61,8 +58,14 @@ var Juego = {
     new Obstaculo('', 887, 79, 56, 480, 2)
   ],
   // Los enemigos se agregaran en este arreglo.
+
   enemigos: [
-    new ZombieCaminante('imagenes/zombie1.png',170,190,14,14,10),
+    
+    new ZombieCaminante('imagenes/zombie1.png',170,190,14,14,2,{desdeX:10,hastaX:100,desdeY:10,hastaY:500}),
+    new ZombieCaminante('imagenes/zombie4.png',170,190,14,14,2,{desdeX:10,hastaX:100,desdeY:10,hastaY:500})
+    // new ZombieConductor('imagenes/tren_vertical.png',669,110,40,100,1),
+    // new ZombieConductor('imagenes/tren_vertical.png',639,110,40,100,1),
+    // new ZombieConductor('imagenes/tren_horizontal.png',839,320,100,40,1)
   ]
 
 }
@@ -213,9 +216,11 @@ Juego.dibujar = function() {
 /* Recorre los enemigos haciendo que se muevan. De la misma forma que hicimos
 un recorrido por los enemigos para dibujarlos en pantalla ahora habra que hacer
 una funcionalidad similar pero para que se muevan.*/
-Juego.moverEnemigos = function(ZombieCaminante) {
+Juego.moverEnemigos = function() {
   /* COMPLETAR */
-
+  this.enemigos.forEach(function(enemigo){
+    enemigo.mover();
+  })
 };
 
 /* Recorre los enemigos para ver cual esta colisionando con el jugador
@@ -223,13 +228,17 @@ Si colisiona empieza el ataque el zombie, si no, deja de atacar.
 Para chequear las colisiones estudiar el metodo posicionValida. Alli
 se ven las colisiones con los obstaculos. En este caso sera con los zombies. */
 Juego.calcularAtaques = function() {
+  var puedeMoverse = true;
   this.enemigos.forEach(function(enemigo) {
     if (this.intersecan(enemigo, this.jugador, this.jugador.x, this.jugador.y)) {
       /* Si el enemigo colisiona debe empezar su ataque
       COMPLETAR */
+      enemigo.comenzarAtaque(Juego.jugador);
     } else {
       /* Sino, debe dejar de atacar
       COMPLETAR */
+      enemigo.dejarDeAtacar();
+      
     }
   }, this);
 };
