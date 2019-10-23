@@ -61,11 +61,12 @@ var Juego = {
 
   enemigos: [
     
-    new ZombieCaminante('imagenes/zombie1.png',170,190,14,14,2,{desdeX:10,hastaX:100,desdeY:10,hastaY:500}),
-    new ZombieCaminante('imagenes/zombie4.png',170,190,14,14,2,{desdeX:10,hastaX:100,desdeY:10,hastaY:500})
+    new ZombieCaminante('imagenes/zombie1.png',170,190,14,14,1,{desdeX:90,hastaX:200,desdeY:100,hastaY:300}),
+    // new ZombieCaminante('imagenes/zombie4.png',170,190,14,14,2,{desdeX:10,hastaX:100,desdeY:10,hastaY:500})
     // new ZombieConductor('imagenes/tren_vertical.png',669,110,40,100,1),
     // new ZombieConductor('imagenes/tren_vertical.png',639,110,40,100,1),
-    // new ZombieConductor('imagenes/tren_horizontal.png',839,320,100,40,1)
+    new ZombieConductor('imagenes/tren_horizontal.png',900,322,90,30,10,{desdeX:10,hastaX:900},"h"),
+  
   ]
 
 }
@@ -228,7 +229,6 @@ Si colisiona empieza el ataque el zombie, si no, deja de atacar.
 Para chequear las colisiones estudiar el metodo posicionValida. Alli
 se ven las colisiones con los obstaculos. En este caso sera con los zombies. */
 Juego.calcularAtaques = function() {
-  var puedeMoverse = true;
   this.enemigos.forEach(function(enemigo) {
     if (this.intersecan(enemigo, this.jugador, this.jugador.x, this.jugador.y)) {
       /* Si el enemigo colisiona debe empezar su ataque
