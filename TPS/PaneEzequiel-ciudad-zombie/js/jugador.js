@@ -4,19 +4,37 @@ var Jugador = {
   /* el sprite contiene la ruta de la imagen
   */
   sprite: 'imagenes/auto_rojo_abajo.png',
-  x: 130,
-  y: 50,
+  x: 850,//x: 130,
+  y: 500,//y: 50,
   ancho: 15,
   alto: 30,
   velocidad: 10,
-  vidas: 5,
+  vidas: 10,
   // Hay que agregar lo que falte al jugador: movimientos, perdida de vidas,
   // y todo lo que haga falta para que cumpla con sus responsabilidades
-  mover: function(x,y){
+  mover: function (x, y) {
+
+    if (x > 0) {
+      this.sprite = 'imagenes/auto_rojo_derecha.png';
+      this.ancho = 30;
+      this.alto = 15;
+    } else if (x < 0) {
+      this.sprite = 'imagenes/auto_rojo_izquierda.png';
+      this.ancho = 30;
+      this.alto = 15;
+    } else if (y > 0) {
+      this.sprite = 'imagenes/auto_rojo_abajo.png';
+      this.ancho = 15;
+      this.alto = 30;
+    } else {
+      this.sprite = 'imagenes/auto_rojo_arriba.png';
+      this.ancho = 15;
+      this.alto = 30;
+    }
     this.x = this.x + x;
     this.y = this.y + y;
   },
-  perderVidas: function(cantVidas){
+  perderVidas: function (cantVidas) {
     this.vidas -= cantVidas;
   }
 }

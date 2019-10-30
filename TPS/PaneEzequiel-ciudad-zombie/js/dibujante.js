@@ -7,7 +7,7 @@ var Dibujante = {
   canvas: document.createElement('canvas'),
   
   borrarAreaDeJuego: function () {
-    this.canvas.getContext('2d').clearRect(0, 0, this.canvas.width, this.canvas.height);
+      this.canvas.getContext('2d').clearRect(0, 0, this.canvas.width, this.canvas.height);
   },
 
   inicializarCanvas: function (anchoCanvas, altoCanvas) {
@@ -37,4 +37,12 @@ var Dibujante = {
     ctx.fillStyle = color;
     ctx.fillRect(x, y, ancho, alto);
   },
+
+
+
+
+
+
 }
+
+
